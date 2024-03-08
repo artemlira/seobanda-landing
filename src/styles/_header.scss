@@ -1,0 +1,22 @@
+.header {
+  margin-top: 10px;
+  // .header__navbar
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__logo
+  &__logo {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+ 

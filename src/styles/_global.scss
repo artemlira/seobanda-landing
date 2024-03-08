@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+// .locked {
+//   overflow: hidden;
+// }
+
+//==================== Оболочка ====================
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  color: $text;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 156%;
+  font-size: 16px;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.btn {
+  min-width: 222px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border-radius: 500px;
+  background: $title;
+  border: 2px solid transparent;
+  color: $white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  &:hover {        
+    background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%), no-repeat;
+    color: $title;
+  }
+
+  @media screen and (max-width: 480px) {
+    min-width: 165px;
+    height: 48px;
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
+
+.btn-white {
+  min-width: 222px;
+  max-height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border-radius: 500px;
+  background: transparent;
+  border: 2px solid $title;
+  color: $title;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  transition: all 0.3s ease;
+  &:hover {
+    background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%), no-repeat;
+    color: $title;
+  }
+
+  @media screen and (max-width: 480px) {
+    min-width: 165px;
+    max-height: 48px;
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
+
+.section-title {
+  color: $title;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 147.619%;
+
+  @media screen and (max-width: 480px) {
+    font-size: 22px;
+    line-height: 140%;
+  }
+}
+
+//==================== Анимация ====================
+// fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+    // left: -100%;
+  }
+
+  100% {
+    opacity: 1;
+    // left: 0;
+  }
+}
+
+//==================== основная сетка ====================
+[class*='__container'] {
+  max-width: $maxWidthContainer + px;
+  padding-inline: 20px;
+  margin-inline: auto;
+
+  @include netbook {
+    max-width: $netbook + px;
+  }
+
+  @include tablet {
+    max-width: $tablet + px;
+  }
+
+  @include phone {
+    max-width: none;
+    padding-inline: 10px;
+  }
+}

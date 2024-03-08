@@ -1,0 +1,60 @@
+.reasons {
+  margin-top: 170px;
+  @media screen and (max-width: 768px) {
+    margin-top: 60px;
+  }
+  // .reasons__title
+  &__title {
+    margin-bottom: 50px;
+    @media screen and (max-width: 768px) {
+      margin-top: 26px;
+    }
+  }
+  // .reasons__list
+  &__list {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 400px));
+    place-content: center;
+  }
+  // .reasons__item
+  &__item {
+    border-radius: 10px;
+    background: $bgColor;
+    box-shadow: 0px 4px 25px 0px rgba(59, 59, 70, 0.1);
+    padding: 24px 90px 24px 24px;
+  }
+}
+
+.item {
+  // .item__img
+  &__img {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 15px;
+    svg {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  // .item__title
+  &__title {
+    color: $title;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+  // .item__text
+  &__text {
+    color: #a1a1aa;
+    line-height: 140%;
+    font-size: 16px;
+    @media screen and (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.about-service {
+  padding-top: 170px;
+  @media screen and (max-width: 820px) {
+    padding-top: 60px;
+  }
+  // .about-service__container
+  &__container {
+    display: flex;
+    border-radius: 10px;
+    background: $bgColor;
+    padding: 0 70px;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 820px) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 0 10px;
+    }
+  }
+  // .about-service_body
+  &_body {
+    flex: 0 1 550px;
+    @media screen and (max-width: 820px) {
+      flex: 1 1 auto;
+    }
+  }
+  // .about-service__title
+  &__title {
+    margin-bottom: 10px;
+  }
+  // .about-service__text
+  &__text {
+    @media screen and (max-width: 480px) {
+      font-size: 15px;
+      line-height: 140%;
+    }
+  }
+  // .about-service__image
+  &__image {
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.vscode
+dist
+node_modules
+vite.config.ts
+postcss.config.js
+cdn.jsdelivr.net_npm_swiper@8_swiper-bundle.min.css

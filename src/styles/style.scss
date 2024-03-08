@@ -1,0 +1,23 @@
+// @import "./reset";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import './variables';
+@import './functions';
+@import './mixins';
+@import './accordion'; //для подключения accordion
+// @import './fonts'; //если шрифты лежать локально в папке fonts
+@import './global';
+@import './header';
+@import './hero';
+@import './about_service';
+@import './who_needs';
+@import './reasons';
+@import './price';
+@import './cost-block';
+@import './work';
+@import './faq';
+@import './footer';
+// @import "./tabs";  //для подключения tabs
+// @import './swiper'; //для подключения swiper
+// @import "./form/_select.scss"; //для подключения select
+// @import './form/inputCheckbox'; //для подключения Checkbox
+// @import "./form/inputRadio"; //для подключения Radio button

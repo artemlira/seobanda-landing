@@ -1,0 +1,44 @@
+.faq {
+  margin-top: 170px;
+  @media screen and (max-width: 480px) {
+    margin-top: 60px;
+  }
+  // .faq__container
+  &__container {
+  }
+  &__title {
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 480px) {
+      margin-bottom: 26px;
+    }
+  }
+
+  .accordion {
+    padding: 16px;
+    border-radius: 10px;
+    background: #fafafa;
+    // .accordion__control
+    &__control {
+    }
+    // .accordion__title
+    &__title {
+      color: #18181b;
+
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%; /* 140% */
+    }
+    // .accordion__icon
+    &__icon {
+    }
+    // .accordion__content
+    &__content {
+      // .accordion__content_text
+      &_text {
+      }
+    }
+  }
+}

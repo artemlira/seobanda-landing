@@ -1,0 +1,120 @@
+.hero {
+  padding-top: 70px;
+  @media screen and (max-width: 480px) {
+    padding-top: 40px;
+  }
+  // .hero__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 26px;
+
+    @media screen and (max-width: 820px) {
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+  // .hero__body
+  &__body {
+    flex: 0 1 610px;
+    @media screen and (max-width: 820px) {
+      flex: 1 1 auto;
+    }
+  }
+  // .hero__title
+  &__title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 66px;
+    background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 26px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 38px;
+      line-height: 140%;
+      margin-bottom: 15px;
+    }
+  }
+  // .hero__text-list
+  &__text-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+    font-size: 18px;
+    line-height: 156%;
+
+    @media screen and (max-width: 480px) {
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+  }
+  // .hero__buttons
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+  // .hero__advantages
+  &__advantages {
+    flex: 0 1 290px;
+  }
+}
+.advantages {
+  // .advantages__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (max-width: 480px) {
+      gap: 16px;
+    }
+  }
+  // .advantages__item
+  &__item {
+    padding: 12px 15px;
+    border-radius: 0px 5px 5px 0px;
+    position: relative;
+    background: $bgColor;
+    box-shadow: 0px 5px 15px 0px rgba(15, 30, 44, 0.06);
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 12px;
+      background: linear-gradient(90deg, #6ddcff 0%, #7f60f9 89.06%), no-repeat;
+      position: absolute;
+      left: -12px;
+      top: 0;
+    }
+    // .advantages__item_number
+    &_number {
+      display: inline-block;
+      background: linear-gradient(90deg, #6ddcff 0%, #7f60f9 89.06%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 800;
+      // line-height: 72px; /* 225% */
+      letter-spacing: -0.64px;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 480px) {
+        font-size: 18px;
+      }
+    }
+    // .advantages__item_text
+    &_text {
+      @media screen and (max-width: 480px) {
+        font-size: 15px;
+      }
+    }
+  }
+}
