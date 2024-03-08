@@ -1,0 +1,55 @@
+.work {
+  margin-top: 170px;
+  @media screen and (max-width: 480px) {
+    margin-top: 60px;
+  }
+  // .work__container
+  &__container {
+   
+  }
+
+   &__title {
+    margin-bottom: 50px; 
+    @media screen and (max-width:480px) {
+      margin-bottom: 26px;
+    }
+  }
+  // .work__content
+  &__content {
+    display: flex;
+    gap: 24px;
+  }
+  // .work__accordion
+  &__accordion {
+    flex: 1 1 770px;
+  }
+  // .work__img
+  &__img {
+  }
+}
+.section-title {
+}
+.work-accordion {
+  // .work-accordion__list
+  &__list {
+  }
+  // .work-accordion__item
+  &__item {
+  }
+  // .work-accordion__control
+  &__control {
+  }
+  // .work-accordion__title
+  &__title {
+  }
+  // .work-accordion__icon
+  &__icon {
+  }
+  // .work-accordion__content
+  &__content {
+    // .work-accordion__content_text
+    &_text {
+    }
+  }
+}
+
