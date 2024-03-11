@@ -1,0 +1,136 @@
+.services {
+  margin-top: 170px;
+  @media screen and (max-width: 480px) {
+    margin-top: 60px;
+  }
+  // .services__container
+  &__container {
+  }
+  // .services__title
+  &__title {
+    margin-bottom: 50px;
+  }
+  // .services__content
+  &__content {
+    position: relative;
+  }
+  // .services__item
+  &__item {
+  }
+  // .services__text
+  &__text {
+  }
+}
+
+.services__content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.services__content__item {
+  display: flex;
+  gap: 15px;
+}
+
+.services__content__item__text {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 50%;
+  flex-direction: column;
+  min-height: 100px;
+}
+
+.services__content__item__title {
+  flex: 0 0 550px;
+  padding: 17px 16px;
+  border-radius: 6px;
+  background: #fafafa;
+  max-height: 60px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &:hover {
+    background: #18181b;
+    .services__item__title {
+      color: $white;
+    }
+    .services__item__arrow {
+      fill: $white;
+    }
+  }
+}
+
+.services__content__item__title:hover + .services__content__item__text {
+  display: flex;
+}
+.services__item__arrow {
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease;
+}
+
+.services__item__title {
+  color: $title;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.services__text__header__title {
+  color: $title;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 10px;
+}
+
+.services__text__description__list {
+  flex: 1 1 auto;
+}
+
+.services__item__text__header {
+  border-bottom: 1px solid #e4e4e7;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.services__text__description {
+  margin-bottom: 20px;
+}
+
+.services__text__subtitle {
+  margin-bottom: 7px;
+}
+
+.services__text__description__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.services__text__description__item {
+  position: relative;
+  padding-left: 22px;
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: $title;
+    border-radius: 50%;
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
