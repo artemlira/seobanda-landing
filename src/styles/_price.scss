@@ -1,4 +1,8 @@
 .price {
+  margin-top: 170px;
+  @media screen and (max-width: 480px) {
+    margin-top: 60px;
+  }
   // .price__container
   &__container {
   }
