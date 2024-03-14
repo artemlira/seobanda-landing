@@ -25,7 +25,4 @@ titleTrigger.forEach((element) => {
 
     element.classList.add('active');
   });
-  element.addEventListener('mouseleave', () => {
-    element.classList.remove('active');
-  });
 });
