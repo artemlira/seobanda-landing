@@ -1,4 +1,7 @@
 import 'the-new-css-reset/css/reset.css';
+import Swiper from 'swiper';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
 import '../styles/style.scss';
 // import burgerMenu from './burger-menu';
 // import tabs from "./tabs"; //Переключение табов
@@ -25,4 +28,37 @@ titleTrigger.forEach((element) => {
 
     element.classList.add('active');
   });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 860) {
+    // eslint-disable-next-line no-new
+    new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      spaceBetween: 80,
+      speed: 1000,
+      slidesPerView: 1,
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      autoplay: {
+        delay: 1800,
+      },
+    });
+  }
 });
