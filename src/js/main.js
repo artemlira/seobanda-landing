@@ -17,3 +17,15 @@ accordion();
 
 // ==================== Переключение селекта ====================
 // select(); // для селекта
+
+const titleTrigger = document.querySelectorAll('.services__content__item');
+titleTrigger.forEach((element) => {
+  element.addEventListener('mousemove', () => {
+    titleTrigger.forEach((e) => e.classList.remove('active'));
+
+    element.classList.add('active');
+  });
+  element.addEventListener('mouseleave', () => {
+    element.classList.remove('active');
+  });
+});
