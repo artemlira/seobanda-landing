@@ -43,7 +43,6 @@ body {
   padding: 16px;
   border-radius: 500px;
   background: $title;
-  border: 2px solid transparent;
   color: $white;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 18px;
@@ -52,9 +51,8 @@ body {
   line-height: 24px;
   transition: all 0.3s ease;
   position: relative;
-  &:hover {        
-    background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%), no-repeat;
-    color: $title;
+  &:hover {
+    background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%);
   }
 
   @media screen and (max-width: 480px) {
