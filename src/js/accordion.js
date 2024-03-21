@@ -6,13 +6,25 @@
 // Аккордеон
 export default function accordion() {
   const accordions = document.querySelectorAll('.accordion');
+  // const workAccordions = document.querySelectorAll('.work-accordion__item');
+
+  // workAccordions.forEach((item) => {
+  //   item.addEventListener('click', (e) => {
+  //     // workAccordions.forEach((el) => el.classList.remove('active'));
+  //     e.classList.add('active');
+  //   });
+  // });
 
   accordions.forEach((item) => {
     item.addEventListener('click', (e) => {
       document.querySelectorAll('.accordion').forEach((el) => {
         el.classList.remove('active');
       });
+      document.querySelectorAll('.work-accordion__item').forEach((el) => {
+        el.classList.remove('active');
+      });
       const self = e.currentTarget;
+      // console.dir(self.closest('.work-accordion__item'));
       const control = item.querySelector('.accordion__control');
       const content = item.querySelector('.accordion__content');
       if (content.style.maxHeight) {
@@ -31,6 +43,7 @@ export default function accordion() {
           content.style.maxHeight = `${content.scrollHeight}px`;
         });
         self.classList.toggle('active');
+        self.closest('.work-accordion__item').classList.toggle('active');
         document.querySelectorAll('.accordion__control').forEach((el) => {
           el.setAttribute('aria-expanded', false);
           control.setAttribute('aria-expanded', true);

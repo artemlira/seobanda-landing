@@ -1,7 +1,9 @@
+/* eslint-disable consistent-return */
+/* eslint-disable func-names */
 import 'the-new-css-reset/css/reset.css';
-// import Swiper from 'swiper';
+import Swiper from 'swiper';
 // eslint-disable-next-line import/no-unresolved
-// import 'swiper/css';
+import 'swiper/css';
 import '../styles/style.scss';
 // import burgerMenu from './burger-menu';
 // import tabs from "./tabs"; //Переключение табов
@@ -30,43 +32,45 @@ titleTrigger.forEach((element) => {
   });
 });
 
-// window.addEventListener('resize', () => {
-//   if (window.innerWidth < 1199.98) {
-//     titleTrigger.forEach((e) => {
-//       e.classList.add('active');
-//     });
-//   }
-// });
-// ===========================================================================
-// window.addEventListener('resize', () => {
-//   if (window.innerWidth < 860) {
-//     // eslint-disable-next-line no-new
-//     new Swiper('.swiper', {
-//       // Optional parameters
-//       direction: 'horizontal',
-//       loop: true,
-//       spaceBetween: 80,
-//       speed: 1000,
-//       slidesPerView: 1,
-//       // If we need pagination
-//       pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//       },
+// ==================================
+const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+  let swiper;
 
-//       // Navigation arrows
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
+  // eslint-disable-next-line no-param-reassign
+  breakpoint = window.matchMedia(breakpoint);
 
-//       // And if we need scrollbar
-//       scrollbar: {
-//         el: '.swiper-scrollbar',
-//       },
-//       autoplay: {
-//         delay: 1800,
-//       },
-//     });
-//   }
-// });
+  // eslint-disable-next-line func-names
+  const enableSwiper = function (className, settings) {
+    swiper = new Swiper(className, settings);
+
+    if (callback) {
+      callback(swiper);
+    }
+  };
+
+  const checker = function () {
+    if (breakpoint.matches) {
+      return enableSwiper(swiperClass, swiperSettings);
+    }
+    if (swiper !== undefined) swiper.destroy(true, true);
+  };
+
+  breakpoint.addEventListener('change', checker);
+  checker();
+};
+
+resizableSwiper('(max-width: 1200px)', '.slider', {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  freeMode: true,
+  speed: 1000,
+  autoplay: {
+    delay: 1500,
+  },
+  // breakpoints: {
+  //   1200: {
+  //     spaceBetween: 20,
+  //   },
+  // },
+});

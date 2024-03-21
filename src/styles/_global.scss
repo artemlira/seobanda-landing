@@ -82,7 +82,6 @@ body {
   transition: all 0.3s ease;
   &:hover {
     background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%), no-repeat;
-    color: $title;
   }
 
   @media screen and (max-width: 490px) {

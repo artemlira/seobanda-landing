@@ -16,6 +16,10 @@
     gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 400px));
     place-content: center;
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      column-gap: 0;
+    }
   }
   // .reasons__item
   &__item {
@@ -26,6 +30,9 @@
   }
 }
 
+.swiper {
+  width: 100%;
+}
 .item {
   // .item__img
   &__img {
