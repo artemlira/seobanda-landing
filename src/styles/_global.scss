@@ -55,7 +55,7 @@ body {
     background: linear-gradient(90deg, #6ddcff -15.43%, #7f60f9 100%);
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 490px) {
     min-width: 165px;
     height: 48px;
     font-size: 15px;
@@ -85,7 +85,7 @@ body {
     color: $title;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 490px) {
     min-width: 165px;
     max-height: 48px;
     font-size: 15px;
