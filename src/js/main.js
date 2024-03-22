@@ -1,13 +1,11 @@
-/* eslint-disable consistent-return */
-/* eslint-disable func-names */
 import 'the-new-css-reset/css/reset.css';
-import Swiper from 'swiper';
 // eslint-disable-next-line import/no-unresolved
-import 'swiper/css';
+import '@splidejs/splide/css';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Splide from '@splidejs/splide';
 import '../styles/style.scss';
 // import burgerMenu from './burger-menu';
 // import tabs from "./tabs"; //Переключение табов
-// import './swiper'; // для подключения swiper
 import accordion from './accordion'; // для подключения accordion
 // import select from "./select"; //для подключения селекта
 // import "./phonemask"; //для подключения phonemask
@@ -33,44 +31,27 @@ titleTrigger.forEach((element) => {
 });
 
 // ==================================
-const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
-  let swiper;
-
-  // eslint-disable-next-line no-param-reassign
-  breakpoint = window.matchMedia(breakpoint);
-
-  // eslint-disable-next-line func-names
-  const enableSwiper = function (className, settings) {
-    swiper = new Swiper(className, settings);
-
-    if (callback) {
-      callback(swiper);
-    }
-  };
-
-  const checker = function () {
-    if (breakpoint.matches) {
-      return enableSwiper(swiperClass, swiperSettings);
-    }
-    if (swiper !== undefined) swiper.destroy(true, true);
-  };
-
-  breakpoint.addEventListener('change', checker);
-  checker();
-};
-
-resizableSwiper('(max-width: 1200px)', '.slider', {
-  loop: true,
-  spaceBetween: 10,
-  slidesPerView: 1,
-  freeMode: true,
-  speed: 1000,
-  autoplay: {
-    delay: 1500,
+const slide = new Splide('.splide', {
+  type: 'loop',
+  perPage: 1,
+  autoplay: true,
+  padding: 10,
+  mediaQuery: 'min',
+  pagination: false,
+  arrows: false,
+  breakpoints: {
+    641: {
+      destroy: true,
+    },
   },
-  // breakpoints: {
-  //   1200: {
-  //     spaceBetween: 20,
-  //   },
-  // },
 });
+
+const bar = slide.root.querySelector('.my-carousel-progress-bar');
+// eslint-disable-next-line func-names
+slide.on('mounted move', function () {
+  const end = slide.Components.Controller.getEnd() + 1;
+  const rate = Math.min((slide.index + 1) / end, 1);
+  bar.style.width = `${String(100 * rate)}%`;
+});
+
+slide.mount();

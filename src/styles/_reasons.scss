@@ -12,13 +12,13 @@
   }
   // .reasons__list
   &__list {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 400px));
-    place-content: center;
-    @media screen and (max-width: 1200px) {
-      display: flex;
-      column-gap: 0;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: 641px) {
+      display: grid !important;
+      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 400px));
+      place-content: center;
     }
   }
   // .reasons__item
@@ -27,12 +27,12 @@
     background: $bgColor;
     box-shadow: 0px 4px 25px 0px rgba(59, 59, 70, 0.1);
     padding: 24px 90px 24px 24px;
+    @media screen and (max-width: 480px) {
+      padding: 15px 20px;
+    }
   }
 }
 
-.swiper {
-  width: 100%;
-}
 .item {
   // .item__img
   &__img {
@@ -64,4 +64,28 @@
       font-size: 15px;
     }
   }
+}
+
+.splide {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.my-carousel-progress {
+  display: none;
+  @media screen and (max-width: 640px) {
+    display: block;
+    background: $bgColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.my-carousel-progress-bar {
+  background: #e4e4e7;
+  height: 4px;
+  transition: width 400ms ease;
+  width: 0;
 }
