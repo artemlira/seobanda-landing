@@ -1,26 +1,49 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-shadow */
+/* eslint-disable import/no-unresolved */
 import 'the-new-css-reset/css/reset.css';
-// eslint-disable-next-line import/no-unresolved
-import '@splidejs/splide/css';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Splide from '@splidejs/splide';
 import '../styles/style.scss';
-// import burgerMenu from './burger-menu';
-// import tabs from "./tabs"; //Переключение табов
-import accordion from './accordion'; // для подключения accordion
-// import select from "./select"; //для подключения селекта
-// import "./phonemask"; //для подключения phonemask
-
-// burgerMenu(); // для бургер меню
-
-// ==================== Переключение табов ====================
-// tabs(".tabs__header", ".tabs__header-item", ".tabs__content-item", "active");
 
 // ==================== Переключение аккордиона ====================
-accordion();
+const accordions = document.querySelectorAll('.accordion');
+accordions.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    document.querySelectorAll('.accordion').forEach((el) => {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.work-accordion__item').forEach((el) => {
+      el.classList.remove('active');
+    });
+    const self = e.currentTarget;
+    // console.dir(self.closest('.work-accordion__item'));
+    const control = item.querySelector('.accordion__control');
+    const content = item.querySelector('.accordion__content');
+    if (content.style.maxHeight) {
+      document.querySelectorAll('.accordion__content').forEach((e) => {
+        e.style.maxHeight = null;
+        e.setAttribute('aria-hidden', true);
+      });
+      document.querySelectorAll('.accordion__control').forEach((el) => {
+        el.setAttribute('aria-expanded', false);
+      });
+    } else {
+      document.querySelectorAll('.accordion__content').forEach((e) => {
+        e.style.maxHeight = null;
+        e.setAttribute('aria-hidden', true);
+        content.setAttribute('aria-hidden', false);
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      });
+      self.classList.toggle('active');
+      self.closest('.work-accordion__item')?.classList.toggle('active');
+      document.querySelectorAll('.accordion__control').forEach((el) => {
+        el.setAttribute('aria-expanded', false);
+        control.setAttribute('aria-expanded', true);
+      });
+    }
+  });
+});
 
-// ==================== Переключение селекта ====================
-// select(); // для селекта
-
+// ==================================
 const titleTrigger = document.querySelectorAll('.services__content__item');
 titleTrigger.forEach((element) => {
   element.addEventListener('mousemove', () => {
