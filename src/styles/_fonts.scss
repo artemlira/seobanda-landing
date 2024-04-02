@@ -1,19 +1,65 @@
 @font-face {
-  font-family: Gilroy;
+  font-family: Inter;
   font-display: swap;
   src:
-    url('/src/assets/fonts/Gilroy-Regular.woff2') format('woff2'),
-    url('/src/assets/fonts/Gilroy-Regular.woff') format('woff');
+    url('/fonts/Inter/Inter-Regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src:
+    url('/fonts/Inter/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src:
+    url('/fonts/Inter/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src:
+    url('/fonts/Inter/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Gilroy;
+  font-family: 'Plus Jakarta Sans';
   font-display: swap;
   src:
-    url('/src/assets/fonts/Gilroy-Medium.woff2') format('woff2'),
-    url('/src/assets/fonts/Gilroy-Medium.woff') format('woff');
+    url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-display: swap;
+  src:
+    url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Medium.woff2') format('woff2');
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-display: swap;
+  src:
+    url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-display: swap;
+  src:
+    url('/fonts/Plus_Jakarta_Sans/PlusJakartaSans-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
   font-style: normal;
 }
